@@ -1,0 +1,78 @@
+.z-warriors-dialog-wrapper {
+    .det-wrapper {
+        padding: .25rem 0;
+    }
+
+    .det-hero {
+        display: flex;
+        align-items: center;
+        gap: 1.25rem;
+        padding: 1rem 1.5rem;
+        background: linear-gradient(135deg, rgba(255, 140, 0, .08), rgba(255, 69, 0, .05));
+        border-radius: 12px;
+        margin-bottom: 1.5rem;
+        border: 1px solid rgba(255, 140, 0, .2);
+    }
+
+    .det-avatar {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 3px solid rgba(255, 140, 0, .5);
+        box-shadow: 0 0 20px rgba(255, 140, 0, .3);
+    }
+
+    .det-name {
+        margin: 0 0 .25rem;
+        font-size: 1.3rem;
+        font-weight: 800;
+        background: linear-gradient(135deg, #ff8c00, #ff4500);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .det-race {
+        margin: 0;
+        color: rgba(255, 255, 255, .5);
+        font-size: .85rem;
+    }
+
+    .det-form {
+        display: flex;
+        flex-direction: column;
+        gap: 1.25rem;
+    }
+
+    .field {
+        display: flex;
+        flex-direction: column;
+        gap: .4rem;
+    }
+
+    .field label {
+        font-size: .85rem;
+        font-weight: 600;
+        color: rgba(255, 255, 255, .7);
+    }
+
+    .err {
+        color: #ff7070;
+        font-size: .78rem;
+    }
+
+    .det-actions {
+        display: flex;
+        justify-content: flex-end;
+        gap: .75rem;
+        padding-top: .5rem;
+    }
+
+    // Sobreescritura de PrimeNG sin ::ng-deep gracias al wrapper
+    .zw-btn-save .p-button {
+        background: linear-gradient(135deg, #ff8c00, #ff4500) !important;
+        border: none !important;
+        border-radius: 10px !important;
+        font-weight: 700 !important;
+    }
+}

@@ -1,0 +1,34 @@
+<div class="z-warriors-layout-wrapper">
+
+    <p-toast />
+
+    <p-toolbar styleClass="zw-toolbar">
+        <ng-template pTemplate="start">
+            <span class="brand">Z-Warriors Admin</span>
+        </ng-template>
+
+        <ng-template pTemplate="center">
+            <div class="nav-links">
+                <a routerLink="characters" routerLinkActive="nav-active">
+                    <i class="pi pi-users"></i> Personajes
+                </a>
+                <a routerLink="estadisticas" routerLinkActive="nav-active">
+                    <i class="pi pi-chart-bar"></i> Estadísticas
+                </a>
+            </div>
+        </ng-template>
+
+        <ng-template pTemplate="end">
+            <div class="tb-end">
+                <p-button [icon]="isDark() ? 'pi pi-sun' : 'pi pi-moon'" [rounded]="true" [text]="true"
+                    (onClick)="toggleDark()" />
+                <p-button label="Cerrar Sesión" icon="pi pi-sign-out" severity="secondary" [outlined]="true"
+                    (onClick)="logout()" />
+            </div>
+        </ng-template>
+    </p-toolbar>
+
+    <main class="main-content">
+        <router-outlet />
+    </main>
+</div>

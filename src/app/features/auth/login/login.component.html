@@ -1,0 +1,44 @@
+<div class="z-warriors-login-wrapper">
+
+    <p-toast />
+
+    <div class="login-wrapper">
+        <div class="aura-bg"></div>
+        <p-card styleClass="login-card">
+            <ng-template pTemplate="header">
+                <div class="lh">
+                    <span class="dragon-icon">🐉</span>
+                    <h1>Z-Warriors</h1>
+                    <p>Panel Administrativo</p>
+                </div>
+            </ng-template>
+
+            <form [formGroup]="form" (ngSubmit)="onSubmit()" class="lf">
+                <p-floatlabel class="w-full">
+                    <input pInputText id="usr" formControlName="username" class="w-full" />
+                    <label for="usr">Usuario</label>
+                </p-floatlabel>
+
+                <p-floatlabel class="w-full">
+                    <p-password id="pwd" formControlName="password" [feedback]="false" [toggleMask]="true"
+                        styleClass="w-full" inputStyleClass="w-full" />
+                    <label for="pwd">Contraseña</label>
+                </p-floatlabel>
+
+                @if (loginError()) {
+                <div class="err-box">
+                    <i class="pi pi-exclamation-triangle"></i>
+                    Credenciales incorrectas, guerrero.
+                </div>
+                }
+
+                <p-button type="submit" label="⚡ Entrar al Torneo" [loading]="isLoading()" [disabled]="form.invalid"
+                    styleClass="w-full zw-btn" />
+            </form>
+
+            <ng-template pTemplate="footer">
+                <p class="lfoot">🐲 Capsule Corp © 2026</p>
+            </ng-template>
+        </p-card>
+    </div>
+</div>

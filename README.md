@@ -1,59 +1,52 @@
-# ZWarriorsAdmin
+🐉 Z-Warriors Admin Panel
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.8.
+Panel administrativo SPA para gestionar la base de datos de guerreros del universo Dragon Ball.
 
-## Development server
+Vista General
 
-To start a local development server, run:
+Z-Warriors Admin Panel es una Single Page Application (SPA) administrativa construida con Angular 21 y PrimeNG v21. Consume datos reales de la 
+Dragon Ball API (https://web.dragonball-api.com/) y ofrece:
 
-```bash
-ng serve
-```
+Requisitos Previos
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Antes de clonar el proyecto, asegúrate de tener instalado:
 
-## Code scaffolding
+Node.js Descargar https://nodejs.org/
+npm (viene con Node.js)
+Angular CLI 
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+Verificar versiones
+node --version
+npm --version
 
-```bash
-ng generate component component-name
-```
+Instalar Angular CLI globalmente
+npm install -g @angular/cli
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+Instalación y Uso
 
-```bash
-ng generate --help
-```
+1. Clonar el repositorio
 
-## Building
+git clone https://github.com/RDanMT/z-warriors-admin.git
+cd z-warriors-admin
 
-To build the project run:
+2. Instalar dependencias
 
-```bash
-ng build
-```
+npm install
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+3. Iniciar el servidor de desarrollo
 
-## Running unit tests
+npm start
 
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+La aplicación estará disponible en http://localhost:4200
 
-```bash
-ng test
-```
+Credenciales de Acceso
 
-## Running end-to-end tests
+La autenticación es simulada (hardcoded). Usa estas credenciales para ingresar:
 
-For end-to-end (e2e) testing, run:
+Usuario: kakarot
+Contraseña: saiyan123
 
-```bash
-ng e2e
-```
+La API es de solo lectura. Las ediciones del diálogo son simuladas localmente.
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Licencia
+RDMT © 2026 — Z-Warriors Admin Panel

@@ -1,0 +1,54 @@
+<div class="z-warriors-stats-wrapper">
+    <div class="page-header">
+        <h1 class="page-title">Estadísticas del Universo</h1>
+        <p class="page-sub">Análisis de poder de los guerreros registrados</p>
+    </div>
+
+    @if (loading()) {
+    <div class="stats-grid">
+        @for (s of [1,2,3,4]; track s) {
+        <p-card styleClass="stat-card">
+            <p-skeleton height="5rem" />
+        </p-card>
+        }
+    </div>
+    } @else {
+    <div class="stats-grid">
+        <div class="kpi-card">
+            <div class="kpi-icon"></div>
+            <div class="kpi-val">{{ totalChars() }}</div>
+            <div class="kpi-label">Total Guerreros</div>
+        </div>
+        <div class="kpi-card">
+            <div class="kpi-icon"></div>
+            <div class="kpi-val">{{ topChar()?.name || '—' }}</div>
+            <div class="kpi-label">Mayor Ki Registrado</div>
+        </div>
+        <div class="kpi-card">
+            <div class="kpi-icon"></div>
+            <div class="kpi-val">{{ distinctRacesCount() }}</div>
+            <div class="kpi-label">Razas Distintas</div>
+        </div>
+        <div class="kpi-card">
+            <div class="kpi-icon"></div>
+            <div class="kpi-val">{{ dominantRace() }}</div>
+            <div class="kpi-label">Raza Dominante</div>
+        </div>
+    </div>
+
+    <div class="section-card">
+        <h2 class="section-title">Distribución por Raza</h2>
+        <div class="race-list">
+            @for (r of raceStats(); track r.race) {
+            <div class="race-row">
+                <span class="race-label">{{ r.race }}</span>
+                <div class="race-bar-wrap">
+                    <div class="race-bar" [style.width.%]="r.pct" [style.background]="r.color"></div>
+                </div>
+                <span class="race-count">{{ r.count }}</span>
+            </div>
+            }
+        </div>
+    </div>
+    }
+</div>

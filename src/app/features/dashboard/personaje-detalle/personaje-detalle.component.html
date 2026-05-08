@@ -1,0 +1,43 @@
+<div class="z-warriors-dialog-wrapper">
+    <div class="det-wrapper">
+
+        <div class="det-hero">
+            <img [src]="char.image" [alt]="char.name" class="det-avatar" />
+            <div class="det-info">
+                <h2 class="det-name">{{ char.name }}</h2>
+                <p class="det-race">{{ char.race }}</p>
+            </div>
+        </div>
+
+        <form [formGroup]="form" (ngSubmit)="save()" class="det-form">
+
+            <div class="field">
+                <label>Ki Máximo</label>
+                <p-inputnumber formControlName="ki" [min]="0" [useGrouping]="true" styleClass="w-full"
+                    inputStyleClass="w-full" />
+
+                @if (form.controls.ki.invalid && form.controls.ki.touched) {
+                <small class="err">El Ki no puede ser negativo.</small>
+                }
+            </div>
+
+            <div class="field">
+                <label>Facción</label>
+                <p-select formControlName="affiliation" [options]="facciones" optionLabel="label" optionValue="value"
+                    styleClass="w-full" placeholder="Selecciona facción" />
+            </div>
+
+            <div class="field">
+                <label>Fecha de Registro</label>
+                <p-datepicker formControlName="registrationDate" styleClass="w-full" dateFormat="dd/mm/yy"
+                    [showIcon]="true" />
+            </div>
+
+            <div class="det-actions">
+                <p-button type="button" label="Cancelar" severity="secondary" [outlined]="true" (onClick)="close()" />
+                <p-button type="submit" label="Guardar Cambios" styleClass="zw-btn-save" [loading]="saving()" />
+            </div>
+
+        </form>
+    </div>
+</div>

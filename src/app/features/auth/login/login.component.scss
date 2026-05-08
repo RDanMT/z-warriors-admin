@@ -1,0 +1,116 @@
+.z-warriors-login-wrapper {
+
+    .login-wrapper {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        overflow: hidden;
+        background: radial-gradient(ellipse at top, #1a1a2e, #0d0d1a 70%);
+    }
+
+    .aura-bg {
+        position: absolute;
+        inset: 0;
+        background:
+            radial-gradient(circle at 25% 50%, rgba(255, 140, 0, .12) 0%, transparent 50%),
+            radial-gradient(circle at 75% 20%, rgba(255, 69, 0, .08) 0%, transparent 40%);
+        animation: aura 5s ease-in-out infinite alternate;
+    }
+
+    @keyframes aura {
+        from {
+            opacity: .4;
+        }
+
+        to {
+            opacity: 1;
+        }
+    }
+
+    .login-card {
+        width: 420px;
+        z-index: 1;
+        background: rgba(255, 255, 255, .05) !important;
+        backdrop-filter: blur(20px);
+        border: 1px solid rgba(255, 140, 0, .3) !important;
+        border-radius: 20px !important;
+    }
+
+    .lh {
+        text-align: center;
+        padding: 1.5rem 1.5rem 0;
+
+        h1 {
+            font-size: 2rem;
+            font-weight: 800;
+            margin: .5rem 0 .2rem;
+            background: linear-gradient(135deg, #ff8c00, #ff4500);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        p {
+            color: rgba(255, 255, 255, .45);
+            font-size: .85rem;
+            margin: 0;
+        }
+    }
+
+    .dragon-icon {
+        font-size: 3.5rem;
+        display: block;
+        animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+
+        0%,
+        100% {
+            transform: translateY(0);
+        }
+
+        50% {
+            transform: translateY(-10px);
+        }
+    }
+
+    .lf {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        padding: 1.5rem 0;
+    }
+
+    .err-box {
+        background: rgba(255, 69, 0, .15);
+        border: 1px solid rgba(255, 69, 0, .4);
+        border-radius: 8px;
+        padding: .7rem 1rem;
+        color: #ff7070;
+        display: flex;
+        align-items: center;
+        gap: .5rem;
+        font-size: .85rem;
+    }
+
+    .zw-btn {
+        background: linear-gradient(135deg, #ff8c00, #ff4500) !important;
+        border: none !important;
+        border-radius: 12px !important;
+        padding: .85rem !important;
+        font-weight: 700 !important;
+
+        &:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(255, 140, 0, .4) !important;
+        }
+    }
+
+    .lfoot {
+        text-align: center;
+        color: rgba(255, 255, 255, .3);
+        font-size: .8rem;
+    }
+}
